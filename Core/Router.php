@@ -5,7 +5,7 @@ namespace Core;
 /**
  * Router
  *
- * PHP version 7.0
+ * PHP version >= 7.0
  */
 class Router
 {
@@ -133,7 +133,7 @@ class Router
 
     /**
      * Convert the string with hyphens to StudlyCaps,
-     * e.g. post-authors => PostAuthors
+     * e.g. zion-herbes => ZionHerbs
      *
      * @param string $string The string to convert
      *

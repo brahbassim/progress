@@ -7,10 +7,9 @@
  */
 
 /**
- * Composer
+ * Bootstrap application (Require composer autoloader and dotenv)
  */
-require dirname(__DIR__) . '/vendor/autoload.php';
-
+require dirname(__DIR__) . '/Bootstrap/init.php';
 
 /**
  * Error and Exception handling
@@ -25,8 +24,15 @@ set_exception_handler('Core\Error::exceptionHandler');
  */
 $router = new Core\Router();
 
-// Add the routes
-$router->add('', ['controller' => 'Home', 'action' => 'index']);
-$router->add('{controller}/{action}');
-    
+echo getenv('DB_HOST');
+
+/**
+ * Load all routes
+ */
+require dirname(__DIR__) . '/Routes/web.php';
+require dirname(__DIR__) . '/Routes/api.php';
+
+/**
+ * Dispatch all routes  
+ */    
 $router->dispatch($_SERVER['QUERY_STRING']);

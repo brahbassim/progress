@@ -5,7 +5,7 @@ namespace Core;
 /**
  * Error and exception handler
  *
- * PHP version 7.0
+ * PHP version >= 7.0
  */
 class Error
 {
@@ -22,7 +22,7 @@ class Error
      */
     public static function errorHandler($level, $message, $file, $line)
     {
-        if (error_reporting() !== 0) {  // to keep the @ operator working
+        if (error_reporting() !== 0) {
             throw new \ErrorException($message, 0, $level, $file, $line);
         }
     }
@@ -43,7 +43,7 @@ class Error
         }
         http_response_code($code);
 
-        if (\App\Config::SHOW_ERRORS) {
+        if (getenv('APP_DEBUG')) {
             echo "<h1>Fatal error</h1>";
             echo "<p>Uncaught exception: '" . get_class($exception) . "'</p>";
             echo "<p>Message: '" . $exception->getMessage() . "'</p>";

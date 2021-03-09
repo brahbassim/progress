@@ -1,10 +1,77 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ERROR 404 - Nothing Found</title>
+      
+        <style type="text/css">
+            html,
+            body {
+                height: 100%;
+                background-color: #3498db;
+                font-family: Helvetica, sans-serif
+            }
 
-{% block title %}Page not found{% endblock %}
+            body {
+                color: #fff;
+                text-align: center;
+                text-shadow: 0 1px 3px rgba(0,0,0,.5);
+            }
 
-{% block body %}
+            h1 {
+                font-size: 58px;
+                margin-top: 20px;
+                margin-bottom: 10px;
+                font-family: inherit;
+                font-weight: 500;
+                line-height: 1.1;
+                color: inherit;
+            }
+            
+            .site-wrapper {
+                display: table;
+                width: 100%;
+                height: 100%;
+                min-height: 100%;
+            }
 
-    <h1>Page not found</h1>
-    <p>Sorry, that page doesn't exist.</p>
+            .site-wrapper-inner {
+                display: table-cell;
+                vertical-align: top;
+            }
 
-{% endblock %}
+            .cover-container {
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .site-wrapper-inner {
+                vertical-align: middle;
+            }
+            .cover-container {
+                width: 100%;
+            }     
+          .button {
+    background-color: ##fff;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+        </style>    
+    </head>    
+    <body>
+        <div class="site-wrapper">
+          <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <h1 class="cover-heading">ERROR 404 - PAGE NOT FOUND</h1>
+                <p>Sorry, that page doesn't exist.</p>
+            </div>
+          </div>
+        </div>
+    </body>
+</html>

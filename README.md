@@ -4,7 +4,7 @@ This is a simple MVC framework for building web applications in PHP. It's free a
 
 ## Starting an application using PROGRESS
 
-1. First, download the framework,  cloning the repo.
+1. First, download the framework, or by cloning the repo.
 1. Run **composer update** to install the project dependencies.
 1. Configure your web server to have the **public** folder as the web root.
 1. Open [App/Config.php](App/Config.php) and enter your database configuration data.
