@@ -7,14 +7,14 @@ This is a simple MVC framework for building web applications in PHP. It's free a
 1. First, download the framework, or by cloning the repo.
 1. Run **composer update** to install the project dependencies.
 1. Configure your web server to have the **public** folder as the web root.
-1. Open [App/Config.php](App/Config.php) and enter your database configuration data.
+1. Open [.env](.env) and enter your database configuration data.
 1. Create routes, add controllers, views and models.
 
 See below for more details.
 
 ## Configuration
 
-Configuration settings are stored in the [App/Config.php](App/Config.php) class. Default settings include database connection data and a setting to show or hide error detail. You can access the settings in your code like this: `Config::DB_HOST`. You can add your own configuration settings in here.
+Configuration settings are stored in the [.env](.env) file. Default settings include database connection, app data and a setting to show or hide error detail. You can access the settings in your code like this: `getenv('DB_HOST')`. You can add your own configuration settings in there.
 
 ## Routing
 
@@ -90,7 +90,7 @@ Views are used to display information (normally HTML). View files go in the `App
 ```php
 View::render('Home/index.php', [
     'name'    => 'Dave',
-    'colours' => ['red', 'green', 'blue']
+    'animales' => ['dog', 'tchiken', 'quail']
 ]);
 ```
 
@@ -99,7 +99,7 @@ The second format uses the [Twig](http://twig.sensiolabs.org/) templating engine
 ```php
 View::renderTemplate('Home/index.html', [
     'name'    => 'Dave',
-    'colours' => ['red', 'green', 'blue']
+    'animales' => ['dog', 'tchiken', 'quail']
 ]);
 ```
 
@@ -115,12 +115,10 @@ $db = static::getDB();
 
 ## Errors
 
-If the `SHOW_ERRORS` configuration setting is set to `true`, full error detail will be shown in the browser if an error or exception occurs. If it's set to `false`, a generic message will be shown using the [App/Views/404.html](App/Views/404.html) or [App/Views/500.html](App/Views/500.html) views, depending on the error.
+If the `APP_DEBUG` configuration setting is set to `true`, full error detail will be shown in the browser if an error or exception occurs. If it's set to `false`, a generic message will be shown using the [App/Views/404.html](App/Views/404.html) or [App/Views/500.html](App/Views/500.html) views, depending on the error.
 
 ## Web server configuration
 
-Pretty URLs are enabled using web server rewrite rules. An [.htaccess](public/.htaccess) file is included in the `public` folder. Equivalent nginx configuration is in the [nginx-configuration.txt](nginx-configuration.txt) file.
+Pretty URLs are enabled using web server rewrite rules. An [.htaccess](public/.htaccess) file is included in the `public` folder. Equivalent nginx configuration is in the [public/nginx.txt](public/nginx.txt) file.
 
 ---
-
-Signup for the course [here](https://davehollingworth.net/phpmvcg) and understand how this framework is built from scratch, putting it all together step by step.
